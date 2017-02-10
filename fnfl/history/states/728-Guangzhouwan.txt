@@ -1,0 +1,22 @@
+state={
+	id=728
+	name="STATE_728"
+	manpower = 2800000
+	
+	state_category = enclave
+	
+	history={
+		owner = SGK
+		add_core_of = SGK
+		buildings = {
+			infrastructure = 4
+			11981 = {
+				naval_base = 3
+			}
+		}
+	}
+	
+	provinces={
+		11981 
+	}
+}

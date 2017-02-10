@@ -1,0 +1,29 @@
+
+state={
+	id=324
+	name="STATE_324"
+	manpower = 600000
+	
+	
+	state_category = town
+	
+	resources={
+		tungsten=2
+	}
+
+	history={
+		owner = ORK
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1 
+		}
+		victory_points = {
+			8010 3 
+		}
+		add_core_of = ORK
+	}
+
+	provinces={
+		8010 12860 
+	}
+}

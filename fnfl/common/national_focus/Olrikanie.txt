@@ -1,0 +1,866 @@
+focus_tree = {
+	id = olrikanie_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = ORK
+		}
+	}
+	focus = {
+		id = ORK_Industry1
+		icon = GFX_goal_generic_construction
+		x = 4
+		y = 0
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = ORK_Industry1
+				bonus = 0.25
+				uses = 2
+				category = industry
+			}
+		}
+	}	
+##
+	focus = {
+		id = ORK_Industry2
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ORK_Industry1 }
+		x = 2
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+			prioritize = { 434 }
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	#####
+	focus = {
+		id = ORK_Tele
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ORK_Industry2 }
+		x = 3
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+			prioritize = { 322 }
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	#####
+	focus = {
+		id = ORK_Steel
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = ORK_Tele }
+		prerequisite = { focus = ORK_arunachal }
+		x = 3
+		y = 3
+
+		cost = 14
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+			controls_state = 287 
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			287 = {
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+			}
+		}
+	}
+	#####
+		focus = {
+		id = ORK_arunachal
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = ORK_Industry2 }
+		x = 1
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+			prioritize = { 434 }
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+#######
+	focus = {
+		id = ORK_Industry4
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ORK_arunachal }
+		
+		x = 1
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}	
+			add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+		}
+
+		completion_reward = {
+			287 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+					}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		
+	}
+#######
+	focus = {
+		id = ORK_Industry3
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ORK_Genious }
+		prerequisite = { focus = ORK_Steel }
+		x = 3
+		y = 4
+		cost = 20
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			324 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+#######
+	focus = {
+		id = ORK_WeapTest
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = ORK_Industry1 }
+		x = 5
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = ORK_WeapTest
+				bonus = 0.99
+				uses = 1
+				category = artillery
+			}
+		}
+	}	
+	######	
+	focus = {
+		id = ORK_Dynamit
+		icon = GFX_goal_generic_air_naval_bomber
+		x = 5
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ORK_Industry2 }
+		prerequisite = { focus = ORK_WeapTest }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = ORK_Dynamite_idea
+		}
+	}
+	######
+	focus = {
+		id = ORK_Genious
+		icon = GFX_goal_generic_air_naval_bomber
+		x = 5
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = { focus = ORK_Dynamit }
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 12
+			remove_building = { type = industrial_complex level = 1 } 
+			remove_building = { type = infrastructure level = 3 }
+			add_manpower = -20000			
+		}
+
+		completion_reward = {
+			324 = { 
+			add_extra_state_shared_building_slots = 12
+			remove_building = { type = industrial_complex level = 1 } 
+			remove_building = { type = infrastructure level = 3 }
+			add_manpower = -20000
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+##############	
+	focus = {
+		id = ORK_Discours
+		icon = GFX_goal_generic_demand_territory
+		x = 10
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+####################	
+#####DEMO###########	
+####################
+	focus = {
+		id = ORK_Tolerance
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = ORK_Discours }
+		mutually_exclusive = { focus = ORK_Brothers }
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = neutrality
+				has_government = communism
+				has_government = fascism
+			}
+		}
+		x = 8
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 95
+			modifier = {
+				factor = 0.1
+				any_neighbor_country = {
+					is_major = yes
+					OR = {
+						has_government = communism
+						has_government = fascism
+					}
+				}
+				NOT = {
+					any_neighbor_country = {
+						is_major = yes
+						has_government = democratic
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+							add_popularity = {	
+						ideology = democratic
+						popularity = 0.2
+					}
+		}
+	}
+##########
+	focus = {
+		id = ORK_election
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = ORK_Tolerance }
+		x = 8
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 95
+			modifier = {
+				factor = 0.1
+				any_neighbor_country = {
+					is_major = yes
+					OR = {
+						has_government = communism
+						has_government = fascism
+					}
+				}
+				NOT = {
+					any_neighbor_country = {
+						is_major = yes
+						has_government = democratic
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		}
+	}
+	
+	
+	
+##########	
+	focus = {
+		id = ORK_war
+		icon = GFX_goal_generic_demand_territory
+		x = 8
+		y = 3
+		cost = 8
+		prerequisite = { focus = ORK_election }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = ORK_Selfdefense
+		}
+	}
+#########
+focus = {
+		id = ORK_Ford
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = ORK_war }
+		x = 8
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = ORK_arms_discount
+		}
+	}
+#########
+focus = {
+		id = ORK_Commit
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = ORK_Ford }
+		x = 8
+		y = 5
+
+		cost = 16
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		bypass = {
+
+		}
+		available = {
+			AND = {
+				ENG = { has_war = yes }
+				has_equipment = { artillery_equipment > 199 }
+				has_equipment = { anti_tank_equipment > 99 }
+				}
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			ORK = { transfer_state = 432 }
+			ORK = { transfer_state = 430 }
+		}
+
+		completion_reward = {
+			ENG = { add_to_faction = ROOT }
+			ORK = { transfer_state = 432 }
+			ORK = { transfer_state = 430 }
+			send_equipment = { target = ENG type = artillery_equipment amount = 200 }
+			send_equipment = { target = ENG type = anti_tank_equipment amount = 100 }
+			}
+	}
+	
+####################	
+#####Commies###########	
+####################	
+focus = {
+		id = ORK_Brothers
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = ORK_Discours }
+		mutually_exclusive = { focus = ORK_Tolerance }
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = neutrality
+				has_government = fascism
+			}
+		}
+		x = 10
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+							add_popularity = {	
+						ideology = communism
+						popularity = 0.2
+					}
+			CHI = {
+					if = {
+						limit = { has_government = communism }
+						add_ideas = ork_influence_drift_communism
+					}
+					if = {
+						limit = { NOT = { has_government = communism } }
+						add_ideas = ork_influence_drift_communism
+					}				
+				}
+			RAJ = {
+					if = {
+						limit = { has_government = communism }
+						add_ideas = ork_influence_drift_communism
+					}
+					if = {
+						limit = { NOT = { has_government = communism } }
+						add_ideas = ork_influence_drift_communism
+					}				
+				}
+		}
+	}
+##########
+	focus = {
+		id = ORK_coup
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = ORK_Brothers }
+		x = 10
+		y = 2
+		cost = 14
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 95
+			modifier = {
+				factor = 0.1
+				any_neighbor_country = {
+					is_major = yes
+					OR = {
+						has_government = democratic
+						has_government = fascism
+					}
+				}
+				NOT = {
+					any_neighbor_country = {
+						is_major = yes
+						has_government = communism
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+		}
+	}
+#############
+focus = {
+		id = ORK_Regroupement
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = ORK_coup }
+		available = {
+			CHI = {
+					exists = yes
+					OR = { 
+						communism > 0.20
+				 	} 
+				}
+			}
+		x = 10
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+		complete_tooltip = {
+			ORK = { transfer_state = 601 }
+			add_national_unity = -0.05
+			}
+
+		completion_reward = {
+		ORK = { transfer_state = 601 }
+		add_national_unity = -0.05
+		}
+	}
+#########
+focus = {
+		id = ORK_Rice
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = ORK_Regroupement }
+		x = 10
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = ORK_Rice4all
+		}
+	}
+	
+#########
+focus = {
+		id = ORK_Seacom
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = ORK_Rice }
+		x = 10
+		y = 5
+
+		cost = 18
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		bypass = {
+
+		}
+		available = {
+			RAJ = {
+					exists = yes
+					OR = { 
+						communism > 0.20
+				 	} 
+				}
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			ORK = { transfer_state = 640 }
+			ORK = { transfer_state = 288 }
+		}
+
+		completion_reward = {
+			ENG = { country_event = { id = ork.1 days = 1 } }
+			
+			ORK = { transfer_state = 640 }
+			ORK = { transfer_state = 288 }
+			}
+	}

@@ -1,0 +1,24 @@
+
+state={
+	id=434
+	name="STATE_434"
+	manpower = 500000
+	
+	state_category = wasteland
+	resources={
+		tungsten=54
+	}
+
+	history={
+		owner = ORK
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+		}
+		add_core_of = ORK
+	}
+
+	provinces={
+		1116 1996 10810 12322 12730 
+	}
+}

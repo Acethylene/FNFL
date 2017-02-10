@@ -1,0 +1,37 @@
+add_namespace = ork
+
+# Ultimatum from Germany (Turkey)
+country_event = {
+		id = ork.1
+		title = ork.1.t
+		desc = ork.1.d
+		picture = GFX_report_event_german_turkish_pact
+	
+		is_triggered_only = yes
+		fire_only_once = yes
+	
+		option = {
+			name = ork.1.a
+			ai_chance = {
+				factor = 65
+			}
+			hidden_effect = {
+				news_event = { hours = 6 id = news.288 }
+			}
+		}
+	
+	
+		option = {
+			name = ork.1.b
+			ai_chance = { factor = 35 }
+			ENG = {
+				declare_war_on = {
+				target = ORK
+					type = puppet_wargoal_focus
+				}
+			}
+		#hidden_effect = {
+			news_event = { hours = 6 id = news.289 }
+			}
+		}
+	}

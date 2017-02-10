@@ -1,0 +1,96 @@
+﻿capital = 322 
+
+oob = "ORK_1936" 
+
+set_research_slots = 3
+
+set_technology = {
+	infantry_weapons = 1
+	gw_artillery = 1
+	gwtank = 1
+	early_fighter = 1
+	early_submarine = 1
+	transport = 1
+	mass_assault = 1
+	}
+set_politics = {
+
+	parties = {
+		democratic = { 
+			popularity = 30
+		}
+
+		fascism = {
+			popularity = 30
+		}
+		
+		communism = {
+			popularity = 5
+		}
+		neutrality = {
+			popularity = 35
+		}
+	}
+
+	ruling_party = fascism
+	last_election = "1933.2.16"
+	election_frequency = 36
+	elections_allowed = yes
+}
+add_ideas = { ORK_Basam_Damdu }
+
+create_country_leader = {
+	name = "Sultan Olrik" 
+	desc = "Personne ne sait qui il est et d'ou il peut venir, on ne sait même pas si il est réellement colonel, ce qui est sure, c'est comme méchant: il assure!"
+	picture = "gfx/leaders/ORK/Portrait_ORK_BRW.dds"
+	ideology = fascism_ideology
+	traits = { cornered_fox
+		
+	}
+}
+
+#non standard english alphabet character
+create_country_leader = {
+	name = "Mortimer"
+	desc = "On se sait pas vraiment si il est toujours professeur, ou si il est aventurier ou encore agent du Mi5, ce qui est sure, aussi improbable que cela puisse paraitre, c'est qu'il gouverne legitimement l'ancienne Olrikanie. Malheuresement: Olrik court toujours!"
+	picture = "gfx/leaders/ORK/Portrait_ORK_Mortimer.dds"
+	ideology = socialism
+	traits = { 
+		
+	}
+}
+
+create_country_leader = {
+	name = "Tintin" 
+	desc = "Ce journaliste intrepide est arrive au pouvoir apres avoir dompte un Yeti"
+	picture = "gfx/leaders/ORK/Portrait_ORK_Tintin.dds"
+	ideology = despotism
+	traits = {
+		
+	}
+}
+create_country_leader = {
+	name = "Komrad Kolonel Olrik" 
+	desc = "Suite à de nombreux echecs face au terrible duo britannique, le colonel Olrik n'a pas eu d'autre choix que de rallier tous les mechants sous une unique banniere. Après quelques semaines sanglantes, les survivants se sont mis d'accord pour adopter celle du Kolonel. Mecreants du monde, unissez vous!"
+	picture = "gfx/leaders/ORK/Portrait_ORK_RedOlrik.dds"
+	ideology = stalinism
+	traits = { permanent_revolutionary
+		
+	}
+}
+create_corps_commander = {
+	name = "Torquemada"
+	picture = "Portrait_Asia_Generic_navy_1.dds"
+	traits = { panzer_leader  }
+	skill = 3
+}
+
+create_field_marshal = {
+	name = "Olrik le magnifique"
+	picture = "Portrait_ORK_BRW.dds"
+	traits = { fast_planner thorough_planner }
+	skill = 4
+}
+
+#couldnt find anything historical on fascism
+
