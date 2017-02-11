@@ -10811,7 +10811,7 @@ news_event = {
 		}
 	}
 	option = {
-		name = news.285.c
+		name = news.c
 		trigger = { 
 			NOT = {
 				TAG = RAJ
@@ -10822,10 +10822,10 @@ news_event = {
 }
 ###########################
 	news_event = {
-	id = news.188
-	title = news.188.t
+	id = news.286
+	title = news.286.t
 	picture = GFX_report_event_german_turkish_pact
-	desc = news.188.d
+	desc = news.286.d
 
 	major = yes
 
@@ -10838,7 +10838,7 @@ news_event = {
 		}
 	#pas le coup.
 	option = {
-		name = news.188.a
+		name = news.286.a
 		trigger = {
 			NOT = {
 				tag = ENG
@@ -10848,7 +10848,7 @@ news_event = {
 	}
 	#Mécréanism ok
 	option = {
-		name = news.188.b
+		name = news.286.b
 		trigger = {
 			NOT = {
 				tag = ENG
@@ -10859,10 +10859,10 @@ news_event = {
 }
 
 news_event = {
-	id = news.189
-	title = news.189.t
+	id = news.287
+	title = news.287.t
 	picture = GFX_report_event_german_turkish_pact
-	desc = news.189.d
+	desc = news.287.d
 
 	major = yes
 
@@ -10875,7 +10875,7 @@ news_event = {
 		}
 	#Brit
 	option = {
-		name = news.189.a
+		name = news.287.a
 		trigger = {
 			NOT = {
 				tag = ENG
@@ -10885,7 +10885,7 @@ news_event = {
 	}
 	#Olrik
 	option = {
-		name = news.189.b
+		name = news.287.b
 		trigger = {
 			NOT = {
 				tag = ENG
@@ -10895,7 +10895,7 @@ news_event = {
 	}
 	#neutre
 	option = {
-		name = news.189.c
+		name = news.287.c
 		trigger = {
 			NOT = {
 				tag = ENG
